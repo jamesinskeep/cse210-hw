@@ -7,7 +7,6 @@ using System.IO;
 class Program
 {
     static void Main(string[] args)
-
     {
         PromptGenerator promptGenerator = new PromptGenerator();
         Journal journal = new Journal();
@@ -42,10 +41,10 @@ class Program
                 Entry entry = new Entry(
                     DateTime.Now.ToString("MM-dd-yyyy"),
                     prompt,
-                    entryText
-                );
+                    entryText);
                 journal.AddEntry(entry);
             }
+
             else if (input == 2)
             {
                 List<Entry> entries = journal.GetEntries();
@@ -61,23 +60,27 @@ class Program
                     }
                 }
             }
+
             else if (input == 3)
             {
                 Console.Write("Enter filename to load: ");
                 string filename = Console.ReadLine();
                 journal.LoadFromFile(filename);
             }
+
             else if (input == 4)
             {
                 Console.Write("Enter filename to save: ");
                 string filename = Console.ReadLine();
                 journal.SaveToFile(filename);
             }
+
             else if (input == 5)
             {
                 Console.WriteLine("Exiting the program. Goodbye!");
                 break;
             }
+
             else if (input == 6)
             {
                 string choice;
@@ -93,23 +96,23 @@ class Program
                         string newPrompt = Console.ReadLine();
                         promptGenerator.AddPrompt(newPrompt);
                     }
+
                     else if (choice == "2")
                     {
                         promptGenerator.RemovePrompt();
                     }
+
                     else if (choice == "3")
                     {
                         continue; // Return to the main menu
                     }
+
                     else
                     {
                         Console.WriteLine("Invalid choice. Please enter 1, 2 or 3.");
                     }
                 } while (choice != "3");
-                
             }
-
         } while (input != 5);
-       
-        }
+    }
 }

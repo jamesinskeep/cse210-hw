@@ -30,6 +30,7 @@ public class PromptGenerator
             return string.Empty;
         }
     }
+
     public void ListPrompts()
     {
         if (_prompts.Count > 0)
@@ -45,15 +46,18 @@ public class PromptGenerator
             Console.WriteLine("No prompts available.");
         }
     }
+
     public void AddPrompt(string prompt)
     {
-            _prompts.Add(prompt);
+        _prompts.Add(prompt);
     }
+
     public void RemovePrompt()
     {
         Console.Write("Enter the number of the prompt you would like to remove: ");
         if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= _prompts.Count)
-        _prompts.RemoveAt(index-1);
-    }
-      
+        {
+            _prompts.RemoveAt(index - 1);
+        }
+    }      
 }

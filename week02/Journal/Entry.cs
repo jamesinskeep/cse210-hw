@@ -11,9 +11,10 @@ public class Entry
         PromptText = promptText;
         EntryText = entryText;
     }
+
     public void Display()
     {
-        Console.Write($"Date: {Date}  - ");
+        Console.Write($"Date: {Date} - ");
         Console.WriteLine($"Prompt: {PromptText}");
         Console.WriteLine($"Entry: {EntryText}");
         Console.WriteLine("------------------------------------------------------------------------------");
